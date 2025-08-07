@@ -1,0 +1,330 @@
+/* ===== BUBBLE AI PRESENTATION - RESPONSIVE STYLES ===== */
+
+/* Mobile First Approach - Base styles are for mobile */
+
+/* Small Mobile Devices (320px - 480px) */
+@media (max-width: 480px) {
+    .slide {
+        padding: 15px 10px;
+        height: 95vh;
+    }
+
+    .brand-logo {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 1.8rem;
+    }
+
+    .logo-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .slide h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    .slide h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .slide h3 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    /* Single column grids on small screens */
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .features-grid,
+    .pricing-table,
+    .list-grid,
+    .contact-grid,
+    .roadmap {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .metric-card,
+    .feature-card,
+    .pricing-card,
+    .contact-card,
+    .roadmap-item {
+        padding: 15px;
+    }
+
+    .feature-icon {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .feature-title {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+
+    .feature-desc,
+    .feature-details {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+
+    .navigation {
+        bottom: 15px;
+        gap: 10px;
+    }
+
+    .nav-btn {
+        padding: 8px 15px;
+        font-size: 0.75rem;
+    }
+
+    .slide-counter {
+        top: 15px;
+        right: 15px;
+        padding: 8px 12px;
+        font-size: 0.75rem;
+    }
+
+    .cta-section {
+        padding: 25px 15px;
+    }
+
+    .cta-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .cta-buttons {
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    .cta-btn {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .testimonial {
+        padding: 15px;
+    }
+
+    .testimonial-text {
+        padding-left: 25px;
+        font-size: 0.9rem;
+    }
+
+    .testimonial::before {
+        font-size: 3rem;
+        top: -10px;
+        left: 10px;
+    }
+
+    .pricing-amount {
+        font-size: 2rem;
+    }
+
+    .bullet-list li {
+        padding: 10px;
+        font-size: 0.85rem;
+        gap: 10px;
+    }
+
+    .bullet-list li::before {
+        width: 20px;
+        height: 20px;
+        font-size: 0.7rem;
+    }
+
+    /* Hide background orbs on very small screens for performance */
+    .orb1,
+    .orb2,
+    .orb3 {
+        display: none;
+    }
+
+    /* Reduce particle count */
+    .particles {
+        opacity: 0.5;
+    }
+}
+
+/* Mobile Devices (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .slide {
+        padding: 20px 15px;
+        height: 92vh;
+    }
+
+    .brand-logo {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .slide h1 {
+        font-size: 2.5rem;
+    }
+
+    .slide h2 {
+        font-size: 2rem;
+    }
+
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .navigation {
+        bottom: 20px;
+        gap: 15px;
+    }
+
+    .nav-btn {
+        padding: 12px 20px;
+        font-size: 0.85rem;
+    }
+
+    .slide-counter {
+        top: 20px;
+        right: 20px;
+        padding: 10px 15px;
+    }
+
+    .cta-buttons {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cta-btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+        min-width: 120px;
+    }
+
+    /* Hide some orbs for better performance */
+    .orb3 {
+        display: none;
+    }
+}
+
+/* Tablets (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .slide {
+        padding: 30px 25px;
+        width: 95vw;
+    }
+
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .pricing-table {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 40px auto;
+    }
+
+    .list-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .navigation {
+        bottom: 25px;
+    }
+
+    .slide-counter {
+        top: 25px;
+        right: 25px;
+    }
+}
+
+/* Small Desktop (1025px - 1366px) */
+@media (min-width: 1025px) and (max-width: 1366px) {
+    .slide {
+        width: 90vw;
+        max-width: 1200px;
+    }
+
+    .metrics-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pricing-table {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Large Desktop (1367px+) */
+@media (min-width: 1367px) {
+    .slide {
+        max-width: 1400px;
+    }
+
+    .brand-logo {
+        font-size: 3.5rem;
+    }
+
+    .logo-icon {
+        width: 90px;
+        height: 90px;
+        font-size: 2.2rem;
+    }
+
+    .slide h1 {
+        font-size: 4.5rem;
+    }
+
+    .slide h2 {
+        font-size: 3.5rem;
+    }
+
+    .metrics-grid {
+        gap: 35px;
+    }
+
+    .features-grid {
+        gap: 35px;
+    }
+
+    .metric-card,
+    .feature-card {
+        padding: 40px;
+    }
+
+    .feature-icon {
+        font-size: 3.5rem;
+    }
+}
+
+/*
