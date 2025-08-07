@@ -1,4 +1,471 @@
-/* ===== BUBBLE AI PRESENTATION - RESPONSIVE STYLES ===== */
+/* Landscape Orientation Adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+    .slide {
+        height: 95vh;
+        padding: 15px 30px;
+    }
+
+    .brand-header {
+        margin-bottom: 20px;
+    }
+
+    .slide h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .slide h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .navigation {
+        bottom: 10px;
+    }
+
+    .slide-counter {
+        top: 10px;
+        right: 10px;
+    }
+
+    .cta-section {
+        padding: 20px;
+    }
+
+    .metrics-grid,
+    .features-grid {
+        gap: 15px;
+        margin: 20px 0;
+    }
+
+    .metric-card,
+    .feature-card {
+        padding: 15px;
+    }
+}
+
+/* High DPI / Retina Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .logo-icon,
+    .feature-icon,
+    .metric-number {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .slide h1,
+    .slide h2,
+    .slide h3 {
+        text-rendering: optimizeLegibility;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+
+    .particles,
+    .orb1,
+    .orb2,
+    .orb3,
+    .navigation,
+    .slide-counter {
+        display: none !important;
+    }
+
+    .slide {
+        background: white;
+        border: 1px solid #ccc;
+        box-shadow: none;
+        page-break-after: always;
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        margin: 0;
+        display: block !important;
+    }
+
+    .slide h1,
+    .slide h2,
+    .slide h3 {
+        color: black;
+        background: none;
+        -webkit-text-fill-color: initial;
+    }
+
+    .metric-number,
+    .feature-title {
+        color: #333;
+        background: none;
+        -webkit-text-fill-color: initial;
+    }
+
+    .cta-section {
+        background: #f0f0f0;
+        color: black;
+    }
+}
+
+/* Accessibility - High Contrast Mode */
+@media (prefers-contrast: high) {
+    .slide {
+        border: 3px solid white;
+        background: rgba(0, 0, 0, 0.95);
+    }
+
+    .nav-btn,
+    .cta-btn {
+        border: 2px solid white;
+        background: black;
+    }
+
+    .metric-card,
+    .feature-card,
+    .pricing-card {
+        border: 2px solid white;
+    }
+
+    .slide h1,
+    .slide h2,
+    .slide h3 {
+        color: white;
+        text-shadow: 2px 2px 4px black;
+    }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .slide {
+        animation: none;
+    }
+
+    .brand-logo,
+    .feature-icon,
+    .logo-icon::before {
+        animation: none;
+    }
+
+    .particle,
+    .orb1,
+    .orb2,
+    .orb3 {
+        animation: none;
+        opacity: 0.3;
+    }
+
+    .slide h1 {
+        animation: none;
+    }
+
+    * {
+        transition: none !important;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: light) {
+    /* If user prefers light mode, we could adjust colors */
+    /* Currently our design is dark by default */
+    .slide {
+        /* Could add light theme adjustments here */
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .nav-btn,
+    .cta-btn,
+    .metric-card,
+    .feature-card {
+        min-height: 44px; /* Minimum touch target size */
+        min-width: 44px;
+    }
+
+    .nav-btn {
+        padding: 15px 25px;
+        font-size: 1rem;
+    }
+
+    .cta-btn {
+        padding: 15px 25px;
+        margin: 5px;
+    }
+
+    /* Remove hover effects on touch devices */
+    .metric-card:hover,
+    .feature-card:hover,
+    .nav-btn:hover,
+    .cta-btn:hover {
+        transform: none;
+        box-shadow: inherit;
+    }
+
+    /* Focus styles for touch navigation */
+    .nav-btn:focus,
+    .cta-btn:focus {
+        outline: 3px solid #3b82f6;
+        outline-offset: 2px;
+    }
+}
+
+/* Ultra-wide Screens (2560px+) */
+@media (min-width: 2560px) {
+    .slide {
+        max-width: 1600px;
+    }
+
+    .slide h1 {
+        font-size: 5rem;
+    }
+
+    .slide h2 {
+        font-size: 4rem;
+    }
+
+    .brand-logo {
+        font-size: 4rem;
+    }
+
+    .logo-icon {
+        width: 100px;
+        height: 100px;
+        font-size: 2.5rem;
+    }
+
+    .feature-icon {
+        font-size: 4rem;
+    }
+
+    .metrics-grid,
+    .features-grid {
+        gap: 40px;
+    }
+
+    .metric-card,
+    .feature-card {
+        padding: 50px;
+    }
+}
+
+/* Vertical Orientation Tablets */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .slide {
+        height: 88vh;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .pricing-table {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .list-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+/* Horizontal Tablets */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .slide {
+        height: 85vh;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pricing-table {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+/* Small Laptop Screens (MacBook Air 13") */
+@media (min-width: 1280px) and (max-width: 1440px) {
+    .slide {
+        width: 88vw;
+        height: 82vh;
+        max-width: 1300px;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .pricing-table {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+}
+
+/* Large Laptop Screens (MacBook Pro 16") */
+@media (min-width: 1440px) and (max-width: 1920px) {
+    .slide {
+        width: 85vw;
+        height: 85vh;
+        max-width: 1400px;
+    }
+}
+
+/* 4K and Ultra HD Displays */
+@media (min-width: 3840px) {
+    .slide {
+        max-width: 2000px;
+    }
+
+    .slide h1 {
+        font-size: 6rem;
+    }
+
+    .slide h2 {
+        font-size: 5rem;
+    }
+
+    .slide h3 {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 2rem;
+    }
+
+    .brand-logo {
+        font-size: 5rem;
+    }
+
+    .logo-icon {
+        width: 120px;
+        height: 120px;
+        font-size: 3rem;
+    }
+
+    .feature-icon {
+        font-size: 5rem;
+    }
+
+    .metric-number {
+        font-size: 4rem;
+    }
+
+    .navigation {
+        gap: 30px;
+    }
+
+    .nav-btn {
+        padding: 20px 40px;
+        font-size: 1.2rem;
+    }
+
+    .slide-counter {
+        padding: 15px 30px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Container Queries Support (Future-proofing) */
+@supports (container-type: inline-size) {
+    .slide {
+        container-type: inline-size;
+    }
+
+    @container (max-width: 600px) {
+        .features-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @container (min-width: 800px) {
+        .features-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+/* Custom Scroll Behavior for Different Screen Sizes */
+@media (max-width: 768px) {
+    .slide::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .slide::-webkit-scrollbar-thumb {
+        border-radius: 2px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .slide::-webkit-scrollbar {
+        width: 12px;
+    }
+}
+
+/* Performance Optimizations for Lower-End Devices */
+@media (max-width: 768px) {
+    .particle {
+        animation-duration: 30s; /* Slower animation for performance */
+    }
+
+    .orb1,
+    .orb2 {
+        filter: blur(20px); /* Less blur for better performance */
+    }
+
+    .slide {
+        backdrop-filter: blur(10px); /* Less blur on mobile */
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .metric-card,
+    .feature-card {
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+}
+
+/* Notification/Alert Bar Spacing */
+@media (max-height: 600px) {
+    .slide-counter {
+        top: 5px;
+        right: 5px;
+        padding: 6px 10px;
+        font-size: 0.7rem;
+    }
+
+    .navigation {
+        bottom: 5px;
+    }
+}
+
+/* Accessibility - Focus Indicators */
+@media (prefers-reduced-motion: no-preference) {
+    .nav-btn:focus,
+    .cta-btn:focus {
+        animation: focusPulse 1s infinite;
+    }
+
+    @keyframes focusPulse {
+        0%, 100% {
+            box-shadow: 0 0 0 2px #3b82f6;
+        }
+        50% {
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5);
+        }
+    }
+} ===== BUBBLE AI PRESENTATION - RESPONSIVE STYLES ===== */
 
 /* Mobile First Approach - Base styles are for mobile */
 
@@ -151,9 +618,7 @@
     }
 
     /* Hide background orbs on very small screens for performance */
-    .orb1,
-    .orb2,
-    .orb3 {
+    .orb1, .orb2, .orb3 {
         display: none;
     }
 
