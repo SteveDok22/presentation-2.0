@@ -657,33 +657,38 @@
                 // Create modal window to show image
                 showImageModal('assets/images/geop1.png', 'GEOPOLITICAL RISK ANALYSIS');
                 showImageModal('assets/images/geop2.png', 'GEOPOLITICAL RISK ANALYSIS');
-                showImageModal('assets/images/geop3.png', 'GEOPOLITICAL RISK ANALYSIS');
-                showImageModal('assets/images/geop4.png', 'GEOPOLITICAL RISK ANALYSIS');
                 showImageModal('assets/images/geop5.png', 'GEOPOLITICAL RISK ANALYSIS');
                 showImageModal('assets/images/geop6.png', 'GEOPOLITICAL RISK ANALYSIS');
                 return;
             }
 
-            // Keep old logic for other features
-            const featureUrls = {
-                'sanctions-compliance': 'sanctions-compliance.html',
-                'supply-chain': 'supply-chain.html',
-                'ml-predictions': 'ml-predictions.html',
-                'visualization': 'visualization.html',
-                'recommendations': 'recommendations.html'
-            };
+                if (featureId === 'ml-predictions') {
+                    // Create modal window to show image
+                    showImageModal('assets/images/geop3.png', 'GEOPOLITICAL RISK ANALYSIS');
+                    showImageModal('assets/images/geop4.png', 'GEOPOLITICAL RISK ANALYSIS');
+                    return;
+                }
 
-            // Open in new browser window/tab
-            if (featureUrls[featureId]) {
-                window.open(featureUrls[featureId], '_blank');
+                // Keep old logic for other features
+                const featureUrls = {
+                    'sanctions-compliance': 'sanctions-compliance.html',
+                    'supply-chain': 'supply-chain.html',
+                    'ml-predictions': 'ml-predictions.html',
+                    'visualization': 'visualization.html',
+                    'recommendations': 'recommendations.html'
+                };
+
+                // Open in new browser window/tab
+                if (featureUrls[featureId]) {
+                    window.open(featureUrls[featureId], '_blank');
+                }
             }
-        }
 
-        // Function to show image in modal window
-        function showImageModal(imageSrc, title) {
-            // Create modal window
-            const modal = document.createElement('div');
-            modal.style.cssText = `
+            // Function to show image in modal window
+            function showImageModal(imageSrc, title) {
+                // Create modal window
+                const modal = document.createElement('div');
+                modal.style.cssText = `
         position: fixed;
         top: 0;
         left: 0;
@@ -698,9 +703,9 @@
         animation: fadeIn 0.3s ease;
     `;
 
-            // Create image container
-            const imageContainer = document.createElement('div');
-            imageContainer.style.cssText = `
+                // Create image container
+                const imageContainer = document.createElement('div');
+                imageContainer.style.cssText = `
         background: rgba(255, 255, 255, 0.1);
         padding: 20px;
         border-radius: 20px;
@@ -710,29 +715,29 @@
         text-align: center;
     `;
 
-            // Create title
-            const titleElement = document.createElement('h2');
-            titleElement.textContent = title;
-            titleElement.style.cssText = `
+                // Create title
+                const titleElement = document.createElement('h2');
+                titleElement.textContent = title;
+                titleElement.style.cssText = `
         color: white;
         margin-bottom: 20px;
         font-family: 'Inter', sans-serif;
     `;
 
-            // Create image
-            const image = document.createElement('img');
-            image.src = imageSrc;
-            image.style.cssText = `
+                // Create image
+                const image = document.createElement('img');
+                image.src = imageSrc;
+                image.style.cssText = `
         max-width: 100%;
         max-height: 70vh;
         border-radius: 15px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     `;
 
-            // Create close button
-            const closeButton = document.createElement('button');
-            closeButton.innerHTML = '✕ Close';
-            closeButton.style.cssText = `
+                // Create close button
+                const closeButton = document.createElement('button');
+                closeButton.innerHTML = '✕ Close';
+                closeButton.style.cssText = `
         background: linear-gradient(135deg, #ef4444, #dc2626);
         color: white;
         border: none;
@@ -745,65 +750,65 @@
         transition: all 0.3s ease;
     `;
 
-            closeButton.addEventListener('mouseenter', () => {
-                closeButton.style.transform = 'scale(1.05)';
-            });
-
-            closeButton.addEventListener('mouseleave', () => {
-                closeButton.style.transform = 'scale(1)';
-            });
-
-            // Add close handlers
-            const closeModal = () => {
-                modal.style.animation = 'fadeOut 0.3s ease';
-                setTimeout(() => {
-                    document.body.removeChild(modal);
-                }, 300);
-            };
-
-            closeButton.addEventListener('click', closeModal);
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    closeModal();
-                }
-            });
-
-            // Close on ESC key
-            document.addEventListener('keydown', function escHandler(e) {
-                if (e.key === 'Escape') {
-                    closeModal();
-                    document.removeEventListener('keydown', escHandler);
-                }
-            });
-
-            // Assemble modal window
-            imageContainer.appendChild(titleElement);
-            imageContainer.appendChild(image);
-            imageContainer.appendChild(closeButton);
-            modal.appendChild(imageContainer);
-
-            // Add to page
-            document.body.appendChild(modal);
-        }
-
-        function goBackToFeatures() {
-            console.log('Features now open in new browser windows');
-        }
-
-        // Add click effects to feature cards
-        document.addEventListener('DOMContentLoaded', function () {
-            const clickableFeatures = document.querySelectorAll('.clickable-feature');
-            clickableFeatures.forEach(card => {
-                card.addEventListener('mouseenter', function () {
-                    this.style.transform = 'translateY(-8px) scale(1.02)';
-                    this.style.cursor = 'pointer';
+                closeButton.addEventListener('mouseenter', () => {
+                    closeButton.style.transform = 'scale(1.05)';
                 });
 
-                card.addEventListener('mouseleave', function () {
-                    this.style.transform = 'translateY(0) scale(1)';
+                closeButton.addEventListener('mouseleave', () => {
+                    closeButton.style.transform = 'scale(1)';
+                });
+
+                // Add close handlers
+                const closeModal = () => {
+                    modal.style.animation = 'fadeOut 0.3s ease';
+                    setTimeout(() => {
+                        document.body.removeChild(modal);
+                    }, 300);
+                };
+
+                closeButton.addEventListener('click', closeModal);
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        closeModal();
+                    }
+                });
+
+                // Close on ESC key
+                document.addEventListener('keydown', function escHandler(e) {
+                    if (e.key === 'Escape') {
+                        closeModal();
+                        document.removeEventListener('keydown', escHandler);
+                    }
+                });
+
+                // Assemble modal window
+                imageContainer.appendChild(titleElement);
+                imageContainer.appendChild(image);
+                imageContainer.appendChild(closeButton);
+                modal.appendChild(imageContainer);
+
+                // Add to page
+                document.body.appendChild(modal);
+            }
+
+            function goBackToFeatures() {
+                console.log('Features now open in new browser windows');
+            }
+
+            // Add click effects to feature cards
+            document.addEventListener('DOMContentLoaded', function () {
+                const clickableFeatures = document.querySelectorAll('.clickable-feature');
+                clickableFeatures.forEach(card => {
+                    card.addEventListener('mouseenter', function () {
+                        this.style.transform = 'translateY(-8px) scale(1.02)';
+                        this.style.cursor = 'pointer';
+                    });
+
+                    card.addEventListener('mouseleave', function () {
+                        this.style.transform = 'translateY(0) scale(1)';
+                    });
                 });
             });
-        });
     </script>
 
     <style>
