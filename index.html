@@ -669,6 +669,13 @@
                 return;
             }
 
+             if (featureId === 'supply-chain') {
+                // Create modal window to show image
+                showImageModal('assets/images/Testo1.png', 'GEOPOLITICAL RISK ANALYSIS');
+                showImageModal('assets/images/22.png', 'GEOPOLITICAL RISK ANALYSIS');
+                return;
+            }
+
             // Keep old logic for other features
             const featureUrls = {
                 'sanctions-compliance': 'sanctions-compliance.html',
